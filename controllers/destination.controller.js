@@ -181,7 +181,7 @@ const addReviewToTravelDestination = async (req, res) => {
       return res.status(404).json({ error: "Destiantion not found" });
     }
     destination.reviews.push(reviewData);
-    await destination.save;
+    await destination.save();
     res.status(200).json({
       message: "Review added successfully",
       data: { destiantion: destination },
@@ -209,12 +209,10 @@ const readDestinationReviewsWithUserDetails = async (req, res) => {
     if (!destinations) {
       return res.status(404).json({ error: "Destination not found" });
     }
-    res
-      .status(200)
-      .json({
-        message: "retrieve reviews successfully",
-        data: { reviews: destinations.reviews },
-      });
+    res.status(200).json({
+      message: "retrieve reviews successfully",
+      data: { reviews: destinations.reviews },
+    });
   } catch (error) {
     res.status(500).json({ error: "Internal server error" });
     throw error;
