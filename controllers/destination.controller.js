@@ -142,7 +142,7 @@ const updateTravelDestinationHandler = async (req, res) => {
 };
 
 /**
- * @route /api/v1/destinations/filter/:minRating
+ * @route GET /api/v1/destinations/filter/:minRating
  * @description retrieving destinations with ratings greater than or equal to the minimum rating.
  * @param {Object} req Express request object with minimum rating in params
  * @param {Object} res Express response object containing the array of destinations with rating greater than or equal to the min rating
